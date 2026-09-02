@@ -1,0 +1,26 @@
+# Metodologias de Engenharia e Otimização Industrial - Inspirado em Elon Musk
+
+Este repositório reúne códigos interativos em Python, documentações conceituais e guias de estudo detalhados sobre o framework operacional, de engenharia e de tomada de decisões aplicado nas empresas de Elon Musk (SpaceX, Tesla e Neuralink) [4, 5].
+
+O objetivo deste projeto é traduzir conceitos complexos de física, economia e desenvolvimento ágil de hardware em ferramentas práticas e documentações de fácil compreensão [4, 6].
+
+---
+
+## 📂 Estrutura do Repositório
+
+```text
+elon-musk-methodology/
+├── README.md                      # Esta visão geral do projeto
+├── .gitignore                     # Arquivos ignorados pelo Git
+├── docs/                          # Guias teóricos e de estudo baseados nas fontes
+│   ├── primeiro-principios.md     # O framework de física e o cálculo do Índice do Idiota [1, 7]
+│   ├── o-algoritmo.md             # O checklist de 5 etapas para otimização industrial [8]
+│   ├── engenharia-agil.md         # Engenharia de hardware ágil e Método Espiral [6]
+│   └── guia-de-estudo.md          # Guia de revisão com quiz de 10 perguntas e glossário [9, 10]
+├── src/                           # Implementação de scripts e ferramentas em Python
+│   ├── __init__.py
+│   ├── calculo_idiot_index.py     # Calculadora interativa do Índice do Idiota e Preço Alvo [1]
+│   ├── simulador_algoritmo.py     # CLI interativo para aplicação do Algoritmo de 5 Passos [8]
+│   └── contenda_sensores.py       # Simulação conceitual de Sensor Fusion vs. Pure Vision [11, 12]
+└── tests/                         # Testes automatizados para validação das funções matemáticas
+    └── test_calculos.py           # Testes unitários para validar os algoritmos de cálculo
