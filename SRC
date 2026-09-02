@@ -38,6 +38,108 @@ def main():
             
     except ValueError as e:
         print(f"Erro: {e}")
+import sys
+
+def rodar_simulador():
+    print("=== SIMULADOR DE TOMADA DE DECISÃO: O ALGORITMO ===")
+    print("Siga os passos rigorosamente na ordem linear para evitar erros de engenharia.\n")
+    
+    # Passo 1: Questionar requisitos
+    print("[Passo 1] Questionar cada requerimento.")
+    resp1 = input("O requerimento possui um nome de pessoa física responsável associado? (s/n): ").strip().lower()
+    if resp1 != 's':
+        print("ALERTA: Requerimentos de departamentos abstratos são perigosos. Identifique o responsável primeiro!")
+        return
+    print("Ótimo. O requerimento foi questionado diretamente com o responsável.\n")
+    
+    # Passo 2: Eliminar partes
+    print("[Passo 2] Eliminar qualquer peça ou processo desnecessário.")
+    resp2 = input("Você eliminou componentes até o limite de falha física? (s/n): ").strip().lower()
+    if resp2 != 's':
+        print("ALERTA: Remova mais peças de forma agressiva até ser forçado a trazer de volta ao menos 10% delas.\n")
+    else:
+        print("Excelente. Design limpo e simplificado.\n")
+        
+    # Passo 3: Simplificar e Otimizar
+    print("[Passo 3] Simplificar e Otimizar o design sobrevivente.")
+    resp3 = input("Você pulou os passos 1 e 2 antes de tentar otimizar esta peça? (s/n): ").strip().lower()
+    if resp3 == 's':
+        print("ERRO METODOLÓGICO CLÁSSICO: Você está otimizando algo que não deveria existir! Volte ao Passo 1.")
+        return
+    print("Perfeito. Otimizando apenas o que sobreviveu à eliminação.\n")
+
+    # Passo 4: Acelerar Ciclo
+    print("[Passo 4] Acelerar o tempo de ciclo.")
+    print("Reduzindo gargalos de fabricação para aumentar a produtividade...\n")
+    
+    # Passo 5: Automatizar
+    print("[Passo 5] Automatizar.")
+    resp5 = input("O processo físico já está totalmente estável e otimizado? (s/n): ").strip().lower()
+    if resp5 != 's':
+        print("ALERTA: Não automatize um processo quebrado! Isso multiplicará os problemas (Production Hell).")
+        return
+    print("Automação implantada com sucesso! Processo finalizado.")
+
+def main():
+    rodar_simulador()
+
+if __name__ == "__main__":
+    main()
+4. Pasta src/ — Arquivo: contenda_sensores.py
+(Crie este arquivo dentro da pasta src para rodar a simulação conceitual do piloto automático)
+import time
+
+def simular_cenario_conflito():
+    print("=== SIMULADOR DE CONTENDA DE SENSORES ===")
+    print("Demonstração de conflito de leituras em Sensor Fusion vs. Visão Pura.\n")
+    
+    print("Carro se aproximando de um viaduto com sombra projetada na estrada...")
+    time.sleep(1)
+    
+    leitura_camera = "Estrada livre à frente (apenas sombra)"
+    leitura_radar = "Obstáculo estacionário detectado (metal/concreto)"
+    
+    print(f"Leitura da Câmera: {leitura_camera}")
+    print(f"Leitura do Radar: {leitura_radar}")
+    print("-" * 50)
+    
+    print("[Cenário 1: Sensor Fusion convencional]")
+    print("Os sensores discordam! Qual sistema deve vencer?")
+    print("Decisão se o radar vencer: Phantom Braking (veículo freia bruscamente sem motivo de verdade).")
+    print("Decisão se a câmera vencer: Risco de colisão se o radar estivesse correto.")
+    print("Resultado: Paralisia de decisão por contenda de sensores.")
+    print("-" * 50)
+    
+    print("[Cenário 2: Tesla Vision - Visão Pura baseada em Redes Neurais]")
+    print("Radar desativado/removido do loop de decisão.")
+    print("Apenas a câmera e a rede neural processam o espaço tridimensional.")
+    print("Decisão: Rede Neural interpreta a sombra e mantém velocidade constante.")
+    print("Resultado: Condução fluida sem ambiguidades de sensores.")
+
+def main():
+    simular_cenario_conflito()
+
+if __name__ == "__main__":
+    main()
+5. Pasta tests/ — Arquivo: test_calculos.py
+(Crie este arquivo dentro de uma pasta chamada tests na raiz do projeto para rodar testes automatizados)
+import pytest
+from src.calculo_idiot_index import calcular_idiot_index, projetar_reducao_custo
+
+def test_calcular_idiot_index():
+    assert calcular_idiot_index(100, 10) == 10.0
+    assert calcular_idiot_index(50, 50) == 1.0
+    
+    with pytest.raises(ValueError):
+        calcular_idiot_index(100, 0)
+
+def test_projetar_reducao_custo():
+    projections = projetar_reducao_custo(100, 50, taxa_eficiencia=0.20, anos=2)
+    # Ano 1: 50 + (50 * 0.8) = 90
+    # Ano 2: 50 + (40 * 0.8) = 82
+    assert len(projections) == 2
+    assert abs(projections[1] - 90.0) < 1e-5
+    assert abs(projections[1] - 82.0) < 1e-5
     except Exception as e:
         print(f"Ocorreu um erro inesperado: {e}")
 
