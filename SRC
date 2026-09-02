@@ -1,0 +1,45 @@
+import sys
+
+def calcular_idiot_index(custo_final, custo_materia_prima):
+    if custo_materia_prima <= 0:
+        raise ValueError("O custo das matérias-primas deve ser maior que zero.")
+    return custo_final / custo_materia_prima
+
+def projetar_reducao_custo(custo_final, custo_materia_prima, taxa_eficiencia=0.15, anos=5):
+    projeções = []
+    custo_atual = custo_final
+    for ano in range(1, anos + 1):
+        # Reduz a margem de processamento ineficiente por ano
+        margem_ineficiente = custo_atual - custo_materia_prima
+        if margem_ineficiente > 0:
+            custo_atual = custo_materia_prima + (margem_ineficiente * (1 - taxa_eficiencia))
+        projeções.append((ano, custo_atual))
+    return projeções
+
+def main():
+    print("=== CALCULADORA DO ÍNDICE DO IDIOTA ===")
+    try:
+        custo_final = float(input("Digite o custo do componente finalizado ($): "))
+        custo_materias = float(input("Digite o custo das matérias-primas básicas ($): "))
+        
+        index = calcular_idiot_index(custo_final, custo_materias)
+        print(f"\nÍndice do Idiota: {index:.2f}x")
+        
+        if index > 10:
+            print("Alerta: O Índice do Idiota é extremamente alto! Há grande espaço para otimização.")
+        else:
+            print("O processo está relativamente eficiente em termos de material.")
+            
+        print("\n--- Projeção de Redução de Custo em 5 anos (15% de eficiência/ano) ---")
+        projeções = projetar_reducao_custo(custo_final, custo_materias)
+        for ano, valor in projeções:
+            novo_index = calcular_idiot_index(valor, custo_materias)
+            print(f"Ano {ano}: Custo Projetado = ${valor:.2f} (Idiot Index = {novo_index:.2f}x)")
+            
+    except ValueError as e:
+        print(f"Erro: {e}")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado: {e}")
+
+if __name__ == "__main__":
+    main()
